@@ -28,8 +28,7 @@ public class RecruitBoards extends BaseEntity{
     @ColumnDefault("0")
     private int likeCount;
 
-    @Column
-    private Long fileId;
+
 
 //    @Column // 지우는게 맞을 것 같음(0903형태)
 //    private int isDelete;

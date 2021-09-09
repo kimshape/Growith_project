@@ -69,7 +69,7 @@ public class RecruitBoardsApiController {
 //    }
 //}
 
-
+    @CrossOrigin
     @GetMapping("/recruitBoard")
     public ResponseEntity<?> findAll() {
         return new ResponseEntity<>(recruitBoardsService.listBoard(), HttpStatus.OK);

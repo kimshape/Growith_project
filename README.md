@@ -17,6 +17,9 @@
   -- yarn add react-router-dom
   -- yarn add redux react-redux
   -- yarn add react-bootstrap bootstrap
+  '''txt (css)
+  import 'bootstrap/dist/css/bootstrap.min.css';
+  '''
 
 #### 프로젝트 세팅
 
@@ -29,3 +32,11 @@
 "printWidth": 80
 
 }
+
+#### 들어갈 색상
+
+- #16B7B9 에메랄드색(진함)
+- #AFE2E2 에메랄드색(연함)
+- #F5F5F5 흰색(바탕)
+- #565656 검정색(글씨용)
+- #E2AFAF 분홍색(연함)
