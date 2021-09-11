@@ -1,8 +1,10 @@
-package com.bit.growith.vo;
+package com.bit.growith.entity;
 
 import com.bit.growith.util.Gender;
 import com.bit.growith.util.MemberRole;
 import lombok.*;
+import org.apache.ibatis.annotations.Many;
+import org.apache.ibatis.annotations.One;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -75,5 +77,11 @@ public class Member {
 //    @OneToMany(mappedBy = "member")
 //    private List<Follow> follows = new ArrayList<>();
 
+    @OneToMany(mappedBy = "member")
+    private List<LikeReplies> likeReplies;
+    @OneToMany(mappedBy = "member")
+    private List<Replies> replies;
+    @OneToMany(mappedBy = "member")
+    private List<LikeBoards> likeBoards;
 
 }

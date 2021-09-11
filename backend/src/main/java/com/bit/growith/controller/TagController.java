@@ -1,8 +1,7 @@
 package com.bit.growith.controller;
 
-import com.bit.growith.dao.TagRepository;
 import com.bit.growith.service.TagServiceImpl;
-import com.bit.growith.vo.Tag;
+import com.bit.growith.entity.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

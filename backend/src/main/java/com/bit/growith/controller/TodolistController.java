@@ -1,7 +1,7 @@
 package com.bit.growith.controller;
 
 import com.bit.growith.service.TodolistService;
-import com.bit.growith.vo.Todolist;
+import com.bit.growith.entity.Todolist;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

@@ -1,6 +1,6 @@
-package com.bit.growith.dao;
+package com.bit.growith.repository;
 
-import com.bit.growith.vo.Tag;
+import com.bit.growith.entity.Tag;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

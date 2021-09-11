@@ -1,18 +1,11 @@
 package com.bit.growith.controller.api;
 
-import com.bit.growith.dto.FileDto;
-import com.bit.growith.service.FileService;
 import com.bit.growith.service.RecruitBoardsService;
-import com.bit.growith.util.MD5Generator;
-import com.bit.growith.vo.File;
-import com.bit.growith.vo.RecruitBoards;
+import com.bit.growith.entity.RecruitBoards;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
 
 @CrossOrigin // 다른 포트에서 자원을 공유하기 위해
 @RequiredArgsConstructor
@@ -29,10 +22,10 @@ public class RecruitBoardsApiController {
 //        System.out.println("recruitBoardContent : "+recruitBoards.getRecruitBoardContent());
 //        System.out.println("likeCount : "+recruitBoards.getLikeCount());
 //        return "저장완료";
-
+    @CrossOrigin
     @PostMapping("/recruitBoard")
     public ResponseEntity<?> save(@RequestBody RecruitBoards recruitBoards) {
-       return new ResponseEntity<>(recruitBoardsService.saveBoard(recruitBoards), HttpStatus.OK);
+       return new ResponseEntity<>(recruitBoardsService.saveBoard(recruitBoards), HttpStatus.CREATED);
     }
 
 //    @PostMapping("/recruitBoard")

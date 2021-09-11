@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UpdateForm = () => {
+const RecruitBoardUpdateForm = () => {
   return (
     <div>
       <h1>글수정</h1>
@@ -8,4 +8,4 @@ const UpdateForm = () => {
   );
 };
 
-export default UpdateForm;
+export default RecruitBoardUpdateForm;

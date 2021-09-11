@@ -1,4 +1,4 @@
-package com.bit.growith.vo;
+package com.bit.growith.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,14 +12,14 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class LikeReplies extends BaseEntity{
+public class LikeBoards extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long likeReplyId;
+    private Long likeBoardId;
 
     @ManyToOne
-    @JoinColumn(name = "replyId")
-    private Replies replies;
+    @JoinColumn(name = "recruitBoardId")
+    private RecruitBoards recruitBoards;
 
     @ManyToOne
     @JoinColumn(name = "memberId")

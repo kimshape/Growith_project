@@ -1,6 +1,6 @@
 package com.bit.growith.service;
 
-import com.bit.growith.vo.Tag;
+import com.bit.growith.entity.Tag;
 
 import java.util.List;
 

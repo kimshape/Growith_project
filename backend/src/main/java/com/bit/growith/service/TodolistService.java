@@ -1,6 +1,6 @@
 package com.bit.growith.service;
 
-import com.bit.growith.vo.Todolist;
+import com.bit.growith.entity.Todolist;
 
 import java.time.LocalDate;
 import java.util.List;

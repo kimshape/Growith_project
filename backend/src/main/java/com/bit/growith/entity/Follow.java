@@ -1,4 +1,4 @@
-package com.bit.growith.vo;
+package com.bit.growith.entity;
 
 import lombok.*;
 

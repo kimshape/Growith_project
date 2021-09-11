@@ -1,7 +1,7 @@
 import React from 'react';
 
-const View = () => {
+const RecruitBoardView = () => {
   return <div>글 상세보기가 될 화면</div>;
 };
 
-export default View;
+export default RecruitBoardView;

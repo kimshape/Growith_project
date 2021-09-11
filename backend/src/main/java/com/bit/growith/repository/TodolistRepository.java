@@ -1,6 +1,6 @@
-package com.bit.growith.dao;
+package com.bit.growith.repository;
 
-import com.bit.growith.vo.Todolist;
+import com.bit.growith.entity.Todolist;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

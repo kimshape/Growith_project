@@ -1,7 +1,7 @@
 package com.bit.growith.service;
 
-import com.bit.growith.dao.RecruitBoardsRepository;
-import com.bit.growith.vo.RecruitBoards;
+import com.bit.growith.repository.RecruitBoardsRepository;
+import com.bit.growith.entity.RecruitBoards;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

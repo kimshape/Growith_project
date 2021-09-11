@@ -1,6 +1,6 @@
-package com.bit.growith.dao;
+package com.bit.growith.repository;
 
-import com.bit.growith.vo.RecruitBoards;
+import com.bit.growith.entity.RecruitBoards;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
