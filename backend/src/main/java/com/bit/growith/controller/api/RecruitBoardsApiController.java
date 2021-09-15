@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
+//security (라이브러리적용) -> CORS 정책을 가지고 있어 해제해야함
 @CrossOrigin // 다른 포트에서 자원을 공유하기 위해
 @RequiredArgsConstructor
 @RestController
@@ -25,6 +27,7 @@ public class RecruitBoardsApiController {
     @CrossOrigin
     @PostMapping("/recruitBoard")
     public ResponseEntity<?> save(@RequestBody RecruitBoards recruitBoards) {
+
        return new ResponseEntity<>(recruitBoardsService.saveBoard(recruitBoards), HttpStatus.CREATED);
     }
 
@@ -65,23 +68,30 @@ public class RecruitBoardsApiController {
     @CrossOrigin
     @GetMapping("/recruitBoard")
     public ResponseEntity<?> findAll() {
+        System.out.println("///////////"+"findAll()"+"//////////");
         return new ResponseEntity<>(recruitBoardsService.listBoard(), HttpStatus.OK);
 
     }
-
-    @GetMapping("/recruitBoard/{id}")
+    @GetMapping("/recruitBoard/{recruitBoardId}")
     public ResponseEntity<?> findById(@PathVariable Long recruitBoardId) {
+        System.out.println("///////"+recruitBoardId+"///////");
         return new ResponseEntity<>(recruitBoardsService.viewBoard(recruitBoardId), HttpStatus.OK);
 
     }
+//    @GetMapping("/recruitBoard/{recruitBoardId}")
+//    public ResponseEntity<?> findById(@PathVariable String recruitBoardId) {
+//        System.out.println("///////"+recruitBoardId+"///////");
+//        return new ResponseEntity<>(recruitBoardsService.viewBoard(Long.parseLong(recruitBoardId)), HttpStatus.OK);
+//
+//    } // String -> Long (0914)
 
-    @PutMapping("/recruitBoard/{id}")
+    @PutMapping("/recruitBoard/{recruitBoardId}")
     public ResponseEntity<?> update(@PathVariable Long recruitBoardId, @RequestBody RecruitBoards recruitBoards) {
         return new ResponseEntity<>(recruitBoardsService.modifyBoard(recruitBoardId, recruitBoards), HttpStatus.OK);
 
     }
 
-    @DeleteMapping("/recruitBoard/{id}")
+    @DeleteMapping("/recruitBoard/{recruitBoardId}")
     public ResponseEntity<?> deleteById(@PathVariable Long recruitBoardId, @RequestBody RecruitBoards recruitBoards) {
         return new ResponseEntity<>(recruitBoardsService.deleteBoard(recruitBoardId), HttpStatus.OK);
 

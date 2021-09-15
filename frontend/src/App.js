@@ -22,12 +22,12 @@ function App() {
           component={RecruitBoardSaveForm}
         />
         <Route
-          path="/recruitBoard/:id"
+          path="/recruitBoard/:recruitBoardId"
           exact={true}
           component={RecruitBoardView}
         />
         <Route
-          path="/recruitBoardUpdateForm/:id"
+          path="/recruitBoardUpdateForm/:recruitBoardId"
           exact={true}
           component={RecruitBoardUpdateForm}
         />

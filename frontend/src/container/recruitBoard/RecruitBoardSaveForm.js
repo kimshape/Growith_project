@@ -30,15 +30,15 @@ const RecruitBoardSaveForm = (props) => {
         }
       })
       .then((res) => {
+        console.log('정상', res);
         if (res !== null) {
           alert('글 작성 완료');
           props.history.push('/recruitBoard');
         } else {
-          alert('책 등록에 실패하였습니다.');
+          alert('작성에 실패하였습니다.');
         }
       });
   };
-
   return (
     <Form onSubmit={submitRecruitBoard}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
