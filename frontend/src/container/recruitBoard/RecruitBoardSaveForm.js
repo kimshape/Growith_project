@@ -37,8 +37,12 @@ const RecruitBoardSaveForm = (props) => {
         } else {
           alert('작성에 실패하였습니다.');
         }
+      })
+      .catch((error) => {
+        console.log('실패', error);
       });
   };
+
   return (
     <Form onSubmit={submitRecruitBoard}>
       <Form.Group className="mb-3" controlId="formBasicEmail">

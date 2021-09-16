@@ -27,8 +27,14 @@ public class RecruitBoardsApiController {
     @CrossOrigin
     @PostMapping("/recruitBoard")
     public ResponseEntity<?> save(@RequestBody RecruitBoards recruitBoards) {
+        System.out.println("//////////POST/////////");
+       return new ResponseEntity<>(recruitBoardsService.saveBoard(recruitBoards), HttpStatus.CREATED); //201
+    }
+    @PutMapping("/recruitBoard/{recruitBoardId}")
+    public ResponseEntity<?> update(@PathVariable Long recruitBoardId, @RequestBody RecruitBoards recruitBoards) {
+        System.out.println("//////////"+recruitBoardId+"PUT/////////");
+        return new ResponseEntity<>(recruitBoardsService.modifyBoard(recruitBoardId, recruitBoards), HttpStatus.OK); //200
 
-       return new ResponseEntity<>(recruitBoardsService.saveBoard(recruitBoards), HttpStatus.CREATED);
     }
 
 //    @PostMapping("/recruitBoard")
@@ -75,7 +81,7 @@ public class RecruitBoardsApiController {
     @GetMapping("/recruitBoard/{recruitBoardId}")
     public ResponseEntity<?> findById(@PathVariable Long recruitBoardId) {
         System.out.println("///////"+recruitBoardId+"///////");
-        return new ResponseEntity<>(recruitBoardsService.viewBoard(recruitBoardId), HttpStatus.OK);
+        return new ResponseEntity<>(recruitBoardsService.viewBoard(recruitBoardId), HttpStatus.OK); //200
 
     }
 //    @GetMapping("/recruitBoard/{recruitBoardId}")
@@ -85,16 +91,12 @@ public class RecruitBoardsApiController {
 //
 //    } // String -> Long (0914)
 
-    @PutMapping("/recruitBoard/{recruitBoardId}")
-    public ResponseEntity<?> update(@PathVariable Long recruitBoardId, @RequestBody RecruitBoards recruitBoards) {
-        return new ResponseEntity<>(recruitBoardsService.modifyBoard(recruitBoardId, recruitBoards), HttpStatus.OK);
 
-    }
 
     @DeleteMapping("/recruitBoard/{recruitBoardId}")
     public ResponseEntity<?> deleteById(@PathVariable Long recruitBoardId) {
         System.out.println("///////"+recruitBoardId+"///////");
-        return new ResponseEntity<>(recruitBoardsService.deleteBoard(recruitBoardId), HttpStatus.OK);
+        return new ResponseEntity<>(recruitBoardsService.deleteBoard(recruitBoardId), HttpStatus.OK); //200
 
     }
 }

@@ -31,14 +31,18 @@ const RecruitBoardView = (props) => {
         }
       });
   };
-
+  const updateRecruitBoard = () => {
+    props.history.push('/recruitBoardUpdateForm/' + recruitBoardId);
+  };
   return (
     <div>
       <h1>모임명</h1>
       <h3>모임장</h3>
       <hr />
       <h3>{recruitBoard.recruitBoardContent}</h3>
-      <Button variant="warning">수정</Button>{' '}
+      <Button variant="warning" onClick={updateRecruitBoard}>
+        수정
+      </Button>{' '}
       <Button variant="danger" onClick={deleteRecruitBoard}>
         삭제
       </Button>
