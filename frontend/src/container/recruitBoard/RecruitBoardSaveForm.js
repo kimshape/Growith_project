@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import ReactSummernote from 'react-summernote';
+import 'react-summernote/dist/react-summernote.css';
+// import 'react-summernote/lang/summernote-ko-KR';
 
 const RecruitBoardSaveForm = (props) => {
   const [recruitBoard, setRecruitBoard] = useState({
@@ -44,21 +47,23 @@ const RecruitBoardSaveForm = (props) => {
   };
 
   return (
-    <Form onSubmit={submitRecruitBoard}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>글 내용</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="내용을 입력해주세요."
-          onChange={changeValue}
-          name="recruitBoardContent"
-        />
-      </Form.Group>
+    <ReactSummernote>
+      <Form onSubmit={submitRecruitBoard}>
+        <Form.Group className="mb-3" controlId="summernote">
+          <Form.Label>글 내용</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="내용을 입력해주세요."
+            onChange={changeValue}
+            name="recruitBoardContent"
+          />
+        </Form.Group>
 
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
+    </ReactSummernote>
   );
 };
 
