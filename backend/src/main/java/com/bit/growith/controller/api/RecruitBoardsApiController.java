@@ -92,7 +92,8 @@ public class RecruitBoardsApiController {
     }
 
     @DeleteMapping("/recruitBoard/{recruitBoardId}")
-    public ResponseEntity<?> deleteById(@PathVariable Long recruitBoardId, @RequestBody RecruitBoards recruitBoards) {
+    public ResponseEntity<?> deleteById(@PathVariable Long recruitBoardId) {
+        System.out.println("///////"+recruitBoardId+"///////");
         return new ResponseEntity<>(recruitBoardsService.deleteBoard(recruitBoardId), HttpStatus.OK);
 
     }

@@ -39,9 +39,14 @@ public class RecruitBoardsService {
         return recruitBoardsEntity;
     } //함수종료 => 트랜잭션 종료 => 영속화 되어있는 데이터를 DB로 갱신(flush) => commit ==> 더티체킹
 
-    @Transactional
-    public String deleteBoard(Long recruitBoardId) {
-        recruitBoardsRepositoty.deleteById(recruitBoardId);
-        return "삭제완료";
-    }
+//    @Transactional
+//    public String deleteBoard(Long recruitBoardId) {
+//        recruitBoardsRepositoty.deleteById(recruitBoardId);
+//        return "삭제완료";
+//    }
+@Transactional
+public String deleteBoard(Long recruitBoardId) {
+    recruitBoardsRepositoty.deleteById(recruitBoardId);
+    return "OK";
+}
 }
