@@ -37,6 +37,12 @@ const Header = () => {
             <Link to="/recruitBoardSaveForm" className="nav-link">
               글쓰기
             </Link>
+            <Link to="/teams" className="nav-link">
+              모임
+            </Link>
+            <Link to="/teamsSave" className="nav-link">
+              모임저장
+            </Link>
           </Nav>
         </Container>
         <Form className="d-flex">

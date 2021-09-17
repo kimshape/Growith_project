@@ -51,7 +51,7 @@ const RecruitBoardUpdateForm = (props) => {
   };
   return (
     <Form onSubmit={submitRecruitBoard}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-3" controlId="summernote">
         <Form.Label>글 내용</Form.Label>
         <Form.Control
           type="text"
@@ -70,3 +70,21 @@ const RecruitBoardUpdateForm = (props) => {
 };
 
 export default RecruitBoardUpdateForm;
+// return (
+//   <Form onSubmit={submitRecruitBoard}>
+//     <Form.Group className="mb-3" controlId="formBasicEmail">
+//       <Form.Label>글 내용</Form.Label>
+//       <Form.Control
+//         type="text"
+//         placeholder="내용을 입력해주세요."
+//         onChange={changeValue}
+//         name="recruitBoardContent"
+//         value={recruitBoard.recruitBoardContent}
+//       />
+//     </Form.Group>
+
+//     <Button variant="primary" type="submit">
+//       Submit
+//     </Button>
+//   </Form>
+// );

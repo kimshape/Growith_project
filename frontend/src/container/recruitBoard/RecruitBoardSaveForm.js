@@ -47,23 +47,21 @@ const RecruitBoardSaveForm = (props) => {
   };
 
   return (
-    <ReactSummernote>
-      <Form onSubmit={submitRecruitBoard}>
-        <Form.Group className="mb-3" controlId="summernote">
-          <Form.Label>글 내용</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="내용을 입력해주세요."
-            onChange={changeValue}
-            name="recruitBoardContent"
-          />
-        </Form.Group>
+    <Form onSubmit={submitRecruitBoard}>
+      <Form.Group className="mb-3" controlId="summernote">
+        <Form.Label>글 내용</Form.Label>
+        <Form.Control
+          type="text"
+          placeholder="내용을 입력해주세요."
+          onChange={changeValue}
+          name="recruitBoardContent"
+        />
+      </Form.Group>
 
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
-    </ReactSummernote>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 };
 

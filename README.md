@@ -14,12 +14,21 @@
 - Node.js 14.17.5
 - npm 6.14.14
 - yarn 1.22
-  -- yarn add react-router-dom
-  -- yarn add redux react-redux
-  -- yarn add react-bootstrap bootstrap
-  '''txt (css)
-  import 'bootstrap/dist/css/bootstrap.min.css';
-  '''
+
+  - yarn eject
+  - yarn add react-router-dom
+  - yarn add redux react-redux
+  - yarn add react-bootstrap bootstrap
+  - yarn add react-summernote
+    '''txt (css)
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    '''
+    npm install react-summernote
+    yarn add react-summernote
+    - jquery
+
+- npm install react-slick --save
+- npm install slick-carousel --save
 
 #### 프로젝트 세팅
 
