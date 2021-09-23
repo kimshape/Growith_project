@@ -28,11 +28,6 @@ public class RecruitBoards extends BaseEntity{
     @ColumnDefault("0")
     private int likeCount;
 
-
-
-//    @Column // 지우는게 맞을 것 같음(0903형태)
-//    private int isDelete;
-
 //    @ColumnDefault("0") // 추후에 시간나면 신고도 추가하겠음 (0902형태)
 //    private int reportCount;
 

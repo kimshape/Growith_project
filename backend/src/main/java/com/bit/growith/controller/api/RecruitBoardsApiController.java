@@ -15,15 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class RecruitBoardsApiController {
 
     private final RecruitBoardsService recruitBoardsService;
-//  private final FileService fileService;
 
-//    @PostMapping("/recruitBoard")
-//    public String save(@RequestBody RecruitBoards recruitBoards) {
-//        System.out.println("recruitBoardId : "+recruitBoards.getRecruitBoardId());
-//        System.out.println("teams : "+recruitBoards.getTeams());
-//        System.out.println("recruitBoardContent : "+recruitBoards.getRecruitBoardContent());
-//        System.out.println("likeCount : "+recruitBoards.getLikeCount());
-//        return "저장완료";
     @CrossOrigin
     @PostMapping("/recruitBoard")
     public ResponseEntity<?> save(@RequestBody RecruitBoards recruitBoards) {
@@ -37,39 +29,6 @@ public class RecruitBoardsApiController {
 
     }
 
-//    @PostMapping("/recruitBoard")
-//    public RecruitBoards save(@RequestBody RecruitBoards recruitBoards, @RequestParam("file") MultipartFile files) {
-//        try {
-//            String origFilename = files.getOriginalFilename();
-//            String filename = new MD5Generator(origFilename).toString();
-//            /* 실행되는 위치의 'files' 폴더에 파일이 저장됩니다. */
-//            String savePath = System.getProperty("user.dir") + "\\files";
-//            /* 파일이 저장되는 폴더가 없으면 폴더를 생성합니다. */
-//            if (!new File(savePath).exists()) {
-//                try{
-//                    new File(savePath).mkdir();
-//                }
-//                catch(Exception e){
-//                    e.getStackTrace();
-//                }
-//            }
-//            String filePath = savePath + "\\" + filename;
-//            files.transferTo(new File(filePath));
-//
-//            FileDto fileDto = new FileDto();
-//            fileDto.setOrigFilename(origFilename);
-//            fileDto.setFilename(filename);
-//            fileDto.setFilePath(filePath);
-//
-//            Long fileId = fileService.saveFile(fileDto);
-//            recruitBoards.setFileId(fileId);
-//            recruitBoardsService.saveBoard(recruitBoards);
-//        } catch(Exception e) {
-//            e.printStackTrace();
-//        }
-//        return "redirect:/";
-//    }
-//}
 
     @CrossOrigin
     @GetMapping("/recruitBoard")
@@ -84,12 +43,6 @@ public class RecruitBoardsApiController {
         return new ResponseEntity<>(recruitBoardsService.viewBoard(recruitBoardId), HttpStatus.OK); //200
 
     }
-//    @GetMapping("/recruitBoard/{recruitBoardId}")
-//    public ResponseEntity<?> findById(@PathVariable String recruitBoardId) {
-//        System.out.println("///////"+recruitBoardId+"///////");
-//        return new ResponseEntity<>(recruitBoardsService.viewBoard(Long.parseLong(recruitBoardId)), HttpStatus.OK);
-//
-//    } // String -> Long (0914)
 
 
 

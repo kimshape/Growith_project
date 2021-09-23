@@ -29,6 +29,7 @@
 
 - npm install react-slick --save
 - npm install slick-carousel --save
+- npm install --save @ckeditor/ckeditor5-react @ckeditor/ckeditor5-build-classic
 
 #### 프로젝트 세팅
 

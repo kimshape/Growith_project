@@ -38,13 +38,6 @@ public class RecruitBoardsService {
         return recruitBoardsRepositoty.findAll();
     }
 
-
-
-//    @Transactional
-//    public String deleteBoard(Long recruitBoardId) {
-//        recruitBoardsRepositoty.deleteById(recruitBoardId);
-//        return "삭제완료";
-//    }
 @Transactional
 public String deleteBoard(Long recruitBoardId) {
     recruitBoardsRepositoty.deleteById(recruitBoardId);

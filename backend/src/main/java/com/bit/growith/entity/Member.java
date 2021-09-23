@@ -1,17 +1,9 @@
 package com.bit.growith.entity;
 
-import com.bit.growith.util.Gender;
-import com.bit.growith.util.MemberRole;
 import lombok.*;
-import org.apache.ibatis.annotations.Many;
-import org.apache.ibatis.annotations.One;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "members")
@@ -21,61 +13,20 @@ import java.util.Set;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Member {
-
+public class Member extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MEMBER_ID")
-    private long memberId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
+    private Long memberId; //시퀀스 auto_increment
+    @Column(nullable = false, length = 30)
+    private String username;
+    @Column(nullable = false, length = 100) // length를 길게잡은 이유? => 123456... =>해쉬 (비밀번호 암호화)
+    private String password;
+    @Column(nullable = false, length = 50)
+    private String email;
 
-    @Column(length = 30, nullable = false)
-    private String memberEmail;
-    @Column(length = 16, nullable = false)
-    private String memberPw;
-
-    @Column(length = 6, nullable = false)
-    private String memberName;
-    @Column(length = 50, nullable = false)
-    private String memberAddress;
-    @Column
-    private LocalDate birth;
-    @Column(length = 10, nullable = false)
-    private String memberNickname;
-    @Column(length = 100, nullable = false)
-    private String memberComment;
-
-//    @Column
-//    private Gender gender;
-//    @Column
-//    private MemberRole memberRole;
-    @Column
-    private int isDelete;
-    @Column
-    private boolean fromSocial;//불린 타입 주의~~
-
-//    enum
-    @ElementCollection(fetch = FetchType.LAZY)
-    @Builder.Default
-    private Set<Gender> genderSet = new HashSet<>();
-
-    public void addGender(Gender gender){
-        genderSet.add(gender);
-    }
-
-    @ElementCollection(fetch = FetchType.LAZY)
-    @Builder.Default
-    private Set<MemberRole> roleSet = new HashSet<>();
-
-    public void addMemberRole(MemberRole memberRole){
-        roleSet.add(memberRole);
-    }
-
-//    onetomany mapping
-    @OneToMany(mappedBy = "member")
-    private List<Tag> tags = new ArrayList<>();
-
-//    @OneToMany(mappedBy = "member")
-//    private List<Follow> follows = new ArrayList<>();
+    // @ColumnDefault("'user'")
+    @Enumerated(EnumType.STRING)
+    private RoleType role; // Enum을 쓰는게 좋다. // admin,user,manager
 
     @OneToMany(mappedBy = "member")
     private List<LikeReplies> likeReplies;
