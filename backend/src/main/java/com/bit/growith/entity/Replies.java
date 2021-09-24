@@ -1,5 +1,7 @@
 package com.bit.growith.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -31,15 +33,18 @@ public class Replies extends BaseEntity{
 //    @ColumnDefault("0")
 //    private int reportCount;
 
-    @ManyToOne
+//    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "recruitBoardId")
+
     private RecruitBoards recruitBoards;
 
+//    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "memberId")
     private Member member;
 
-    @OneToMany(mappedBy = "replies", cascade = CascadeType.ALL)
-    private List<LikeReplies> likeReplies;
+//    @OneToMany(mappedBy = "replies", cascade = CascadeType.ALL)
+//    private List<LikeReplies> likeReplies;
 
 }

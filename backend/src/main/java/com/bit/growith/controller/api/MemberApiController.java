@@ -11,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
+
 @CrossOrigin // 다른 포트에서 자원을 공유하기 위해
 @RequiredArgsConstructor
 @RestController
@@ -26,7 +29,15 @@ public class MemberApiController {
         member.setRole(RoleType.Member);
     return new ResponseEntity<>(memberService.saveMember(member), HttpStatus.CREATED);
     }
-
+    @PostMapping("/member/login")
+    public ResponseEntity<?> login(@RequestBody Member member, HttpSession session){
+        System.out.println("MemberApiController : login 호출됨");
+        Member principal = memberService.login(member);
+        if(principal != null){
+            session.setAttribute("principal", principal);
+        }
+        return new ResponseEntity<>(principal, HttpStatus.CREATED);
+    }
     @PutMapping("/member/{memberId}")
     public ResponseEntity<?> update(@PathVariable Long memberId, @RequestBody Member member) {
         System.out.println("//////////"+memberId+"PUT/////////");
@@ -48,8 +59,6 @@ public class MemberApiController {
         return new ResponseEntity<>(memberService.viewMember(memberId), HttpStatus.CREATED); //200
 
     }
-
-
 
     @DeleteMapping("/member/{memberId}")
     public ResponseEntity<?> deleteById(@PathVariable Long memberId) {

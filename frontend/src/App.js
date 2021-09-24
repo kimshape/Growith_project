@@ -12,7 +12,8 @@ import Teams from './container/teams/Teams';
 import TeamsDetail from './container/teams/TeamsDetail';
 import TeamsSave from './container/teams/TeamsSave';
 import TeamsUpdate from './container/teams/TeamsUpdate';
-
+import LoginForm from './container/login/LoginForm';
+import JoinForm from './container/join/JoinForm';
 function App() {
   return (
     <div>
@@ -35,6 +36,8 @@ function App() {
           exact={true}
           component={RecruitBoardUpdateForm}
         />
+        <Route path="/member/loginForm" exact={true} component={LoginForm} />
+        <Route path="/member/joinForm" exact={true} component={JoinForm} />
         <Route path="/teams" exact={true} component={Teams} />
         <Route path="/teamsSave" exact={true} component={TeamsSave} />
         <Route path="/teams/:id" exact={true} component={TeamsDetail} />

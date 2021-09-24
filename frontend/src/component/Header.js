@@ -24,11 +24,12 @@ const Header = () => {
               alt="Growith logo"
             />
           </Link>
+
           <Nav className="me-auto">
-            <Link to="/joinForm" className="nav-link">
+            <Link to="/member/joinForm" className="nav-link">
               회원가입
             </Link>
-            <Link to="/loginForm" className="nav-link">
+            <Link to="/member/loginForm" className="nav-link">
               로그인
             </Link>
             <Link to="/recruitBoard" className="nav-link">

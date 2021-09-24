@@ -35,6 +35,7 @@ public class RecruitBoardsService {
     }
 
     public List<RecruitBoards> listBoard() {
+
         return recruitBoardsRepositoty.findAll();
     }
 

@@ -1,5 +1,6 @@
 package com.bit.growith.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -28,11 +29,13 @@ public class Member extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private RoleType role; // Enum을 쓰는게 좋다. // admin,user,manager
 
-    @OneToMany(mappedBy = "member")
-    private List<LikeReplies> likeReplies;
+//    @OneToMany(mappedBy = "member")
+//    private List<LikeReplies> likeReplies;
+
+//    @JsonManagedReference
     @OneToMany(mappedBy = "member")
     private List<Replies> replies;
-    @OneToMany(mappedBy = "member")
-    private List<LikeBoards> likeBoards;
+//    @OneToMany(mappedBy = "member")
+//    private List<LikeBoards> likeBoards;
 
 }

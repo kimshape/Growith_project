@@ -2,15 +2,22 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { ListGroup, Card } from 'react-bootstrap';
+// import jquery from 'jquery';
+// import $ from 'jquery';
 
 const RecruitBoardView = (props) => {
   // console.log(1, props);
   const recruitBoardId = props.match.params.recruitBoardId;
+  // const replyId = props.match.params.replyId;
 
   const [recruitBoard, setRecruitBoard] = useState({
     recruitBoardId: '',
     recruitBoardContent: '',
   });
+  // const [replies, setReplies] = useState({
+  //   replyId: '',
+  //   replyContent: '',
+  // });
   useEffect(() => {
     fetch('http://localhost:8080/recruitBoard/' + recruitBoardId)
       .then((res) => res.json())
@@ -52,19 +59,14 @@ const RecruitBoardView = (props) => {
           <textarea className="form-control" rows="1"></textarea>
         </div>
         <div className="card-footer">
-          <Button
-            // style={{ backgroundColor: '#AFE2E2', Color: '#565656' }}
-            variant="primary"
-          >
-            댓글작성
-          </Button>
+          <Button variant="primary">댓글작성</Button>
         </div>
       </div>
       <br />
       <div className="card">
         <div className="card-header">댓글리스트</div>
-        <Card id="comment--box" style={{ width: 'auto' }}>
-          <ListGroup id="comment--1" variant="flush">
+        <Card id="reply--box" style={{ width: 'auto' }}>
+          <ListGroup id="reply--1" variant="flush">
             <ListGroup.Item
               className="d-flex"
               style={{
@@ -76,6 +78,38 @@ const RecruitBoardView = (props) => {
               <div className="d-flex">
                 <div style={{ fontFamily: 'serif' }}>
                   작성자 : 김형태 &nbsp;
+                </div>
+                <Button variant="danger">삭제</Button>
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup id="reply--2" variant="flush">
+            <ListGroup.Item
+              className="d-flex"
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>댓글내용1</div>
+              <div className="d-flex">
+                <div style={{ fontFamily: 'serif' }}>작성자 : kim &nbsp;</div>
+                <Button variant="danger">삭제</Button>
+              </div>
+            </ListGroup.Item>
+          </ListGroup>
+          <ListGroup id="reply--3" variant="flush">
+            <ListGroup.Item
+              className="d-flex"
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+              }}
+            >
+              <div>댓글내용2</div>
+              <div className="d-flex">
+                <div style={{ fontFamily: 'serif' }}>
+                  작성자 : kimshape &nbsp;
                 </div>
                 <Button variant="danger">삭제</Button>
               </div>

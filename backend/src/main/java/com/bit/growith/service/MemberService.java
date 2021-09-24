@@ -21,6 +21,10 @@ public class MemberService {
     public Member saveMember(Member member) {
        return memberRepository.save(member);
     }
+    @Transactional(readOnly = true) // select 할 때 트랜잭션 시작, 서비스 종료시에 트랜잭션 종료 (정합성 유지)
+    public Member login(Member member){
+        return memberRepository.findByUsernameAndPassword(member.getUsername(),member.getPassword());
+    }
     @org.springframework.transaction.annotation.Transactional
     public Member modifyMember(Long memberId, Member member) {
         // update
